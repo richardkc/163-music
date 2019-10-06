@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <title>管理页面</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/loading.css">
+</head>
+<body>
+    <div id="app" class="page">
+        <aside>
+            <div class="newSong" @click="inputAudioClick">新建歌曲</div>
+            <div class="songList">
+                <ul v-for="song in songs">
+                    <li>{{song.name}}</li>
+                </ul>
+            </div>
+            <div class="uploadArea" @click="inputAudioClick">
+                <span>拖曳或点击上传歌曲文件</span>
+                <input class="inputAudio" type="file" accept="audio/*" @change="changeImg">
+            </div>
+        </aside>
+        <main>
+            <form class="form">
+                <h2>新建歌曲信息</h2>
+                <div class="row">
+                    <label>歌名</label>
+                    <input type="text" v-model="songData.name">
+                </div>
+                <div class="row">
+                    <label>歌手</label>
+                    <input type="text" v-model="songData.singer">
+                </div>
+                <div class="row">
+                    <label>歌曲大小:</label>
+                    <span>{{songData.size}}</span>
+                </div>
+                <div class="row">
+                    <label>歌曲格式:</label>
+                    <span>{{songData.format}}</span>
+                </div>
+                <button @click.prevent="saveData">保存</button>
+            </form>
+        </main>
+        <loading v-if="transferProgress" key="loading"></loading>
+    </div>
+    <script src="../node_modules/leancloud-storage/dist/av-min.js"></script>
+    <script src="../vendors/qiniu.min.js"></script>
+    <script src="../vendors/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./js/loading.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/av.js"></script>
+</body>
+</html>

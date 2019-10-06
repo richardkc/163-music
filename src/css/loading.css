@@ -1,0 +1,24 @@
+.page .loading{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(255,255,255,0.5);
+    z-index: 10;
+}
+.page .loading .progress{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 20px;
+    width: 200px;
+    border-radius: 10px;
+    background: white;
+}
+.page .loading .progress .twig{
+    position: absolute;
+    left: 0;
+    height: 20px;
+    border-radius: 10px;
+    background: #0099cc;
+}
