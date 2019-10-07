@@ -6,9 +6,14 @@
   100% {transform: rotate(360deg); } 
 }
 
-.page{display: flex; flex-direction: column; height: 100vh;
+.playInterface{
+	display: flex; flex-direction: column; height: 100vh;width: 100vw;
 	background: transparent url(http://p3.music.126.net/z4p2xss2a50qNHe6TLFdoA==/2425522650910827.jpg) no-repeat center;
 	background-size: cover;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
 }
 
 .disc-container{position: relative; }
@@ -17,7 +22,7 @@
 	border: 1px solid white; height: 20vw; width: 20vw;
 	border-radius: 50%; background: rgba(0,0,0,0.5);
 }
-.disc-container .icon {width: 10vw; fill: white;}
+.disc-container .icon {width: 10vw;height: 4vh;vertical-align: middle;padding-left: 4px;}
 .disc-container .pointer{width: 24vw; position: absolute; left: 45vw; }
 .disc-container .disc{display: flex; justify-content: center; align-items: center; margin-top: 18vw; }
 .disc-container .ring{width: 72vw; } 
@@ -32,8 +37,6 @@
 }
 
 .disc-container .icon-pause{display: none; }
-.disc-container.playing .icon-pause{display: block; }
-.disc-container.playing .icon-play{display: none; }
 
 .song-description{
 	flex-grow: 1;
@@ -61,13 +64,13 @@
 	color: white;
 }
 
-.page > .links{
+.playInterface > .links{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	color: #D43B32;
 }
-.page > .links > a{
+.playInterface > .links > a{
 	width: 38.5vw;
 	margin: 1em;
 	text-align: center;
@@ -79,7 +82,7 @@
 	border-radius: 1.3vw;
 	letter-spacing: 1vw;
 }
-.page > .links > a.main{
+.playInterface > .links > a.main{
 	background: #D43B32;
 	color: white;
 }	

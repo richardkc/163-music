@@ -1,0 +1,25 @@
+section.background{
+    height: 40px;
+    width: 100%;
+    background: url('//s3.music.126.net/mobile-new/img/hot_music_bg_2x.jpg?f01a252…=');
+    padding-top: 38.9%;
+    margin-top: 105px;
+    background-size: contain;
+    position: relative;
+}
+section.background .part-1{
+    position: absolute;
+    top: 28%;
+    left: 6%;
+    color: white;
+    font-family: '方正综艺_GBK';
+    font-size: 2.5em;
+    font-weight: 500;
+}
+section.background .part-2{
+    position: absolute;
+    top: 65%;
+    left: 7%;
+    color: white;
+    font-size: 0.5em;
+}
